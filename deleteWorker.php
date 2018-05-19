@@ -17,8 +17,11 @@
             <input type="button" id="homeBtn" value="Home" />
             <input type="button" id="insertWorkerBtn" value="Insert Worker"/>
             <input type="button" id="deleteWorkerBtn" value="Delete Worker"/>
+            <input type='button' id='meetingBtn' value='Create Meeting'/>
             <input type="button" id="logoutBtn" value="Logout" />
         </div>
+        
+        <br/>
         
         <h1>Delete Worker</h1>
         

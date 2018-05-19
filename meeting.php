@@ -11,7 +11,7 @@
     </head>
     
     <body>
-        <h1>Insert Worker Page</h1>
+        <h1>Create Meeting</h1>
         <div class="user-menu">
             <?php echo "Welcome ".$_SESSION['username']."! ";?> 
             <input type="button" id="homeBtn" value="Home" />
@@ -23,22 +23,43 @@
         
         <br/>
         
-        <h1>Insert Worker</h1>
+        <h1>Create Meeting</h1>
         
         <div>
             <form method="post">
                 First Name: <input type="text" name="firstName"/>
                 <br/>
                 <br/>
-                 Last Name: <input type="text" name="lastName"/>
+                Last Name: <input type="text" name="lastName"/>
                 <br/>
                 <br/>
-                 Job Title: <select name="jobTitle">
-                    <option value="0">Select</option>
-                    <option value="Software Engineer">Software Engineer</option>
-                    <option value="Hardware Engineer">Hardware Engineer</option>
-                    <option value="Data Scientist"   >Data Scientist</option>
+                Room #: <input type="text" name="roomNum"/>
+                <br/>
+                <br/>
+                
+                From: 
+                 
+                <select id="startTime" name="select">
+                        <?php
+                            echo "<option value='0'>Select</option>";
+                            
+                            for($i = 1; $i <= 5; ++$i) {
+                                echo "<option value='$i:00 pm'>$i:00 pm</option>";
+                            }
+                        ?>
                 </select>
+                
+                to:
+                
+                <select id="endTime" name="select">
+                        <?php
+                            echo "<option value='0'>Select</option>";
+                            for($i = 1; $i <= 5; ++$i) {
+                                echo "<option value='$i:00 pm'>$i:00 pm</option>";
+                            }
+                        ?>
+                </select>
+                
                 <br/>
                 <br/>
                 <input type="submit" name="insert" value="Insert"/>
@@ -49,13 +70,15 @@
         <?php
             if(isset($_POST['insert'])) {
                 // Testing
-                // echo $_POST['firstName'] . "<br/>";
-                // echo $_POST['lastName'] . "<br/>";
-                // echo $_POST['jobTitle'] . "<br/>";
-                insertWorker();
+                echo $_POST['firstName'] . "<br/>";
+                echo $_POST['lastName'] . "<br/>";
+                echo $_POST['startTime'] . "<br/>";
+                echo $_POST['endTime'] . "<br/>";
+                echo $_POST['roomNum'] . "<br/>";
+                // insertMeeting();
             }
             
-            displayAllWorkers();
+            displayAllMeetings();
         ?>
         
         <!--Javascript files-->

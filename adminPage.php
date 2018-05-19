@@ -23,8 +23,10 @@
     //redirecting user to quiz if credentials are valid
     if(isset($user['admin_name'])){
         $_SESSION['username'] = $user['admin_name'];
+        $_SESSION['isUser'] = false;
         header('Location: index.php');
     } else {
+        $_SESSION['isUser'] = true;
         echo "The values you entered were incorrect. <a href='login.php'>Retry</a>";
     }
 ?>
